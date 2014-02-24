@@ -1,5 +1,5 @@
 //
-//  cocos2d_x_macTests.m
+//  CCTestCase.mm
 //  cocos2d-x-macTests
 //
 //  Created by Karim DRIDI on 24/02/2014.
@@ -7,12 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <CCDirector.h>
 
-@interface cocos2d_x_macTests : XCTestCase
+@interface CCTestCase : XCTestCase
 
 @end
 
-@implementation cocos2d_x_macTests
+@implementation CCTestCase
 
 - (void)setUp
 {
@@ -28,7 +29,8 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    cocos2d::CCDirector* director(cocos2d::CCDirector::sharedDirector());
+    XCTAssertTrue(director != nullptr, "cocos2d::CCDirector* director must be initialized");
 }
 
 @end

@@ -1,0 +1,28 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#include <TargetConditionals.h>
+
+#ifdef TARGET_OS_MAC
+#   if TARGET_OS_IPHONE
+#       ifdef __OBJC__
+#           import <Foundation/Foundation.h>
+#           import <UIKit/UIKit.h>
+#           import <QuartzCore/QuartzCore.h>
+#           import <CoreGraphics/CoreGraphics.h>
+#       endif
+#   else
+#       ifdef __OBJC__
+#           import <Cocoa/Cocoa.h>
+#           import <CoreVideo/CoreVideo.h>
+#       endif
+#   endif
+#endif
+
+#ifdef __cplusplus
+#   include "cocos2d.h"
+#   include "SimpleAudioEngine.h"
+#endif
